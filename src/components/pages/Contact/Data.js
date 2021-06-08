@@ -1,7 +1,7 @@
 export const homeObjFour= {
     lightBg: false,
     lightText: true,
-    lightTextDesc: true,
+    lightTextDesc: false,
     topLine: 'KONTAKT',
     headline: 'Stavba rodinných domov',
     description: 

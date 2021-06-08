@@ -1,7 +1,7 @@
 export const homeObjTwo= {
     lightBg: false,
     lightText: true,
-    lightTextDesc: true,
+    lightTextDesc: false,
     topLine: 'TECHNOLÓGIA',
     headline: 'Stavba rodinných domov',
     description: 

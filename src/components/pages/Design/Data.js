@@ -1,5 +1,5 @@
 export const homeObjThree= {
-    lightBg: false,
+    lightBg: true,
     lightText: true,
     lightTextDesc: true,
     topLine: 'DIZAJN',

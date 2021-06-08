@@ -32,7 +32,7 @@
 }
 
 .top-line {
-  color: #000;
+  color: #dcdcdc;
   font-size: 16px;
   line-height: 16px;
   font-weight: 700;
@@ -54,7 +54,7 @@
 }
 
 .darkBg {
-  background-color: #ff6600;
+  background-color: #000;
 }
 
 .home__subtitle {
