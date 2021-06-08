@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { Button } from './Button'
-import logo from '../images/logo_lashouse.png'
 import './Navbar.css'
 import { IconContext } from 'react-icons/lib'
 
@@ -33,7 +32,7 @@ const Navbar = () => {
             <div className="navbar">
                 <div className="navbar-container container">
                     <Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
-                        <img src={logo} alt='Logo'/>
+                        <img src='/images/logo_lashouse.png' alt='Logo'/>
                     </Link>
                     <div className="menu-icon" onClick={handleClick}>
                         {click ? <FaTimes /> : <FaBars />}
