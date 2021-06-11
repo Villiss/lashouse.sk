@@ -1,5 +1,30 @@
 import React from 'react'
 import emailjs from 'emailjs-com'
+import {motion} from 'framer-motion'
+
+const pageVariants = {
+    initial: {
+        opacity:0,
+        x:'-100vw',
+        scale: 0.8
+    },
+    in: {
+        opacity:1,
+        x:0,
+        scale: 1
+    },
+    out: {
+        opacity:0,
+        x: '100vw',
+        scale: 1.2
+    }
+  }
+  
+  const pageTransition= {
+    type: 'tween',
+    ease: 'anticipate',
+    duration: 0.5
+  }
 
 function Contact() {
 
@@ -16,7 +41,12 @@ function Contact() {
       }
 
     return (
-        <>
+        <motion.div 
+        initial='initial'
+        animate='in'
+        exit='out'
+        variants={pageVariants}
+        transition={pageTransition}>
             <div className= 'home__section darkBg'>
                 <div className="container">
                     <div className="row home__row" style={{display:'flex', flexDirection: 'row-reverse'}}>
@@ -51,7 +81,7 @@ function Contact() {
                                         <input type="email" name="email" />
                                         <label>Správa</label>
                                         <textarea name="sprava" />
-                                        <input type="submit" value="Send" />
+                                        <input type="submit" value="Odoslať" />
                                     </form>
                                 </div>
                             </div>
@@ -59,7 +89,7 @@ function Contact() {
                     </div>
                 </div>
             </div>
-        </>
+        </motion.div>
     )
 }
 
