@@ -11,6 +11,7 @@ import Contact from './components/pages/Contact/Contact'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
+  document.title = "LASHOUSE"
   return (
     <Router>
     <ScrollToTop />
