@@ -11,7 +11,7 @@ import Home from './components/pages/HomePage/Home'
 import Technologies from './components/pages/Technologies/Technologies'
 import Contact from './components/pages/Contact/Contact'
 import ScrollToTop from './components/ScrollToTop'
-
+import Gallery from './components/pages/Gallery/Gallery'
 
 function App() {
   document.title = "LASHOUSE"
@@ -26,6 +26,7 @@ function App() {
         <Route path='/technologia' component={Technologies}/>
         <Route path='/dizajn' component={Design}/>
         <Route path='/kontakt' component={Contact}/>
+        <Route path='/galeria' component={Gallery}/>
       </Switch>
       </AnimatePresence>
       <Footer />
