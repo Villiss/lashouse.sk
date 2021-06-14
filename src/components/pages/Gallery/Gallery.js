@@ -65,6 +65,7 @@ function Gallery() {
         exit='out'
         variants={pageVariants}
         transition={pageTransition}>
+        <h1>Galéria</h1>
         <div className={model? 'model open' : 'model'}>
             <img src={tempingSrc} />
             <MdClose onClick={() => setModel(false)}/>
