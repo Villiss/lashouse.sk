@@ -53,11 +53,11 @@ const Navbar = () => {
                                 Dizajn
                             </Link>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <Link to='/galeria' className="nav-links" onClick={closeMobileMenu}>
                                 Galéria
                             </Link>
-                        </li>
+                        </li> */}
                         <li className="nav-btn">
                             {button ? (
                                 <Link to='/kontakt' className="btn-link" >
