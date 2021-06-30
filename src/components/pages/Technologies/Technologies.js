@@ -45,7 +45,7 @@ const Technologies = () => {
                                 Stavba rodinných domov
                                 </div>
                                 <h1 className='heading'>Technológia</h1>
-                                <p className='home__subtitle '>Pri realizovaní stavieb neponechávame veci náhode. Preto používame montovaný stavebný systém od renomovanej medzinárodnej firmy <a href="http://www.lindab.com/sk/pro/pages/default.aspx?redirecttoproorhome=true&i=2685/">Lindab.</a><br /> 
+                                <p className='home__subtitle '>Pri realizovaní stavieb neponechávame veci náhode. Preto používame montovaný stavebný systém od renomovanej medzinárodnej firmy <a href="http://www.lindab.com/sk/pro/pages/default.aspx?redirecttoproorhome=true&i=2685/" target='_blank'>Lindab.</a><br /> 
                                 Táto technológia nám umožňuje stavať rýchlo, jednoducho a v akýchkoľvek poveternostných podmienkach. Montovaná technológia využíva ľahkú oceľovú nosnú konštrukciu s výplňou minerálnej tepelnej izolácie. <br /> Ako plášť na fasádu a interér sú za podklad zvolené sádrovlaknité dosky s doplňujúcimi fóliami. Pre naplnenie nízkoenergetického štandardu pridávame z exteriérovej strany ďalšiu tepelnú izoláciu ochránenú kvalitnou silikónovou omietkou.<br/><br/></p>
                                 <Link to='/kontakt'>
                                     <Button buttonSize='btn--wide' buttonColor='blue'>Kontaktujte nás</Button>
