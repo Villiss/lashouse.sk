@@ -1,62 +1,58 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import './Gallery.css'
-import {MdClose} from 'react-icons/md'
+import BtnSlider from './BtnSlider'
+import dataSlider from './dataSlider'
 import { motion } from 'framer-motion'
 
+export default function Gallery() {
 
-const pageVariants = {
-    initial: {
-        opacity:0,
-        x:'-100vw',
-        scale: 0.8
-    },
-    in: {
-        opacity:1,
-        x:0,
-        scale: 1
-    },
-    out: {
-        opacity:0,
-        x: '100vw',
-        scale: 1.2
-    }
-  }
-  
-  const pageTransition= {
-    type: 'tween',
-    ease: 'anticipate',
-    duration: 0.5
-  }
+    const [slideIndex, setSlideIndex] = useState(1)
 
-
-function Gallery() {
-
-
-    let data = [
-        {
-            id:1,
-            imgSrc: 'images/contact.jpg',
-        },
-        {
-            id:2,
-            imgSrc: 'images/design.jpg',
-        },
-        {
-            id:3,
-            imgSrc: 'images/home.jpg',
-        },
-        {
-            id:4,
-            imgSrc: 'images/tech.jpg',
+    const nextSlide = () => {
+        if(slideIndex !== dataSlider.length){
+            setSlideIndex(slideIndex + 1)
+        } 
+        else if (slideIndex === dataSlider.length){
+            setSlideIndex(1)
         }
-    ]
-    const [model, setModel] = useState(false)
-    const [tempingSrc, setTempingSrc] = useState('')
-
-    const getImg = (imgSrc) => {
-        setTempingSrc(imgSrc)
-        setModel(true)
     }
+
+    const prevSlide = () => {
+        if(slideIndex !== 1){
+            setSlideIndex(slideIndex - 1)
+        }
+        else if (slideIndex === 1){
+            setSlideIndex(dataSlider.length)
+        }
+    }
+
+    const moveDot = index => {
+        setSlideIndex(index)
+    }
+
+    const pageVariants = {
+        initial: {
+            opacity:0,
+            x:'-100vw',
+            scale: 0.8
+        },
+        in: {
+            opacity:1,
+            x:0,
+            scale: 1
+        },
+        out: {
+            opacity:0,
+            x: '100vw',
+            scale: 1.2
+        }
+      }
+      
+      const pageTransition= {
+        type: 'tween',
+        ease: 'anticipate',
+        duration: 0.5
+      }
 
     return (
         <motion.div 
@@ -64,23 +60,32 @@ function Gallery() {
         animate='in'
         exit='out'
         variants={pageVariants}
-        transition={pageTransition}>
-        <h1>Galéria</h1>
-        <div className={model? 'model open' : 'model'}>
-            <img src={tempingSrc} />
-            <MdClose onClick={() => setModel(false)}/>
-        </div>
-        <div className='galeria'>
-            {data.map((item, index) =>{
-                return(
-                    <div className='pics' key={index} onClick={() =>getImg(item.imgSrc)}>
-                        <img src={item.imgSrc} style={{ width: '100%' }}/>
+        transition={pageTransition} 
+        className="container-slider">
+            {dataSlider.map((obj, index) => {
+                return (
+                    <div
+                    key={obj.id}
+                    className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
+                    >
+                        <img 
+                        src={process.env.PUBLIC_URL +`/images/${index + 1}.jpg`}
+                        // src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`} 
+                        />
                     </div>
                 )
-            } )}
-        </div>
-        </motion.div>
+            })}
+            <BtnSlider moveSlide={nextSlide} direction={"next"} />
+            <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
+
+            <div className="container-dots">
+                {Array.from({length: 4}).map((item, index) => (
+                    <div 
+                    onClick={() => moveDot(index + 1)}
+                    className={slideIndex === index + 1 ? "dot active" : "dot"}
+                    ></div>
+                ))}
+            </div>
+            </motion.div>
     )
 }
-
-export default Gallery
